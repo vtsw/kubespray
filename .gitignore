@@ -21,6 +21,7 @@ plugins/mitogen
 inventory/*
 !inventory/local
 !inventory/sample
+!inventory/vatech
 inventory/*/artifacts/
 
 # Byte-compiled / optimized / DLL files

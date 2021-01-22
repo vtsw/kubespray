@@ -15,7 +15,6 @@ bin_dir: /usr/local/bin
 ## but don't know about that address themselves.
 # access_ip: 1.1.1.1
 
-
 ## External LB example config
 ## apiserver_loadbalancer_domain_name: "elb.some.domain"
 # loadbalancer_apiserver:
@@ -112,3 +111,6 @@ no_proxy_exclude_workers: false
 
 ## Check if access_ip responds to ping. Set false if your firewall blocks ICMP.
 # ping_access_ip: true
+
+docker_version: "20.10"
+containerd_version: "1.4.3"

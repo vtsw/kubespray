@@ -2,5 +2,5 @@
 
 git remote add upstream https://github.com/kubernetes-sigs/kubespray
 
-git fetch
+git fetch upstream
 git merge upstream/master

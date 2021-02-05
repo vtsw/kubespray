@@ -26,6 +26,7 @@ all:
         ansible_user: haruband
         ansible_sudo_pass: kk3249
         ansible_become: yes
+        metallb_enabled: false
     etcd:
       hosts:
         node1:

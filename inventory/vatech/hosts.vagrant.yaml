@@ -19,8 +19,6 @@ all:
       vars:
         ansible_user: vagrant
         ansible_become: yes
-        cilium_datapath_mode: "ipvlan"
-        cilium_ipvlan_master: eth1
         metallb_protocol: "layer2"
         metallb_ip_range:
           - "10.5.0.50-10.5.0.99"

@@ -29,7 +29,6 @@ all:
         metallb_ip_range:
           - "172.26.50.244-172.26.50.245"
         metallb_protocol: "layer2"
-        cilium_datapath_mode: ""
     etcd:
       hosts:
         service-node1:

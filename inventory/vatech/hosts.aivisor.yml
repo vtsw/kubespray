@@ -1,31 +1,31 @@
 all:
   hosts:
-    admin-node1:
+    node1:
       ansible_host: 172.26.50.250
       ip: 172.26.50.250
       access_ip: 172.26.50.250
-    admin-node2:
+    node2:
       ansible_host: 172.26.50.251
       ip: 172.26.50.251
       access_ip: 172.26.50.251
   children:
     kube-master:
       hosts:
-        admin-node1:
+        node1:
     kube-node:
       hosts:
-        admin-node1:
-        admin-node2:
+        node1:
+        node2:
       vars:
         ansible_user: haruband
         ansible_become: yes
         ansible_sudo_pass: kk3249
         metallb_ip_range:
-          - "172.26.50.240-172.26.50.241"
+          - "172.26.50.252-172.26.50.253"
         metallb_protocol: "layer2"
     etcd:
       hosts:
-        admin-node1:
+        node1:
     k8s-cluster:
       children:
         kube-master:

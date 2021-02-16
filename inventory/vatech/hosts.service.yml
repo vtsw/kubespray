@@ -1,27 +1,27 @@
 all:
   hosts:
-    service-node1:
+    node1:
       ansible_host: 172.26.50.247
       ip: 172.26.50.247
       access_ip: 172.26.50.247
-    service-node2:
+    node2:
       ansible_host: 172.26.50.248
       ip: 172.26.50.248
       access_ip: 172.26.50.248
-    service-node3:
+    node3:
       ansible_host: 172.26.50.249
       ip: 172.26.50.249
       access_ip: 172.26.50.249
   children:
     kube-master:
       hosts:
-        service-node1:
-        service-node2:
+        node1:
+        node2:
     kube-node:
       hosts:
-        service-node1:
-        service-node2:
-        service-node3:
+        node1:
+        node2:
+        node3:
       vars:
         ansible_user: haruband
         ansible_become: yes
@@ -31,9 +31,9 @@ all:
         metallb_protocol: "layer2"
     etcd:
       hosts:
-        service-node1:
-        service-node2:
-        service-node3:
+        node1:
+        node2:
+        node3:
     k8s-cluster:
       children:
         kube-master:

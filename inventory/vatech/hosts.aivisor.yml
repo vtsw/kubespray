@@ -27,7 +27,7 @@ all:
         ansible_become: yes
         ansible_sudo_pass: kk3249
         metallb_ip_range:
-          - "172.26.50.245-172.26.50.246"
+          - "172.26.50.240-172.26.50.241"
         metallb_protocol: "layer2"
     etcd:
       hosts:

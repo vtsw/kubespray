@@ -35,6 +35,8 @@ all:
         node2:
         node3:
         node4:
+        node5:
+        node6:
       vars:
         ansible_user: haruband
         ansible_become: yes

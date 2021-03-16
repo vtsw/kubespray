@@ -1,0 +1,29 @@
+all:
+  hosts:
+    node1:
+      ansible_host: 172.26.50.251
+      ip: 172.26.50.251
+      access_ip: 172.26.50.251
+  children:
+    kube-master:
+      hosts:
+        node1:
+    kube-node:
+      hosts:
+        node1:
+      vars:
+        ansible_user: haruband
+        ansible_become: yes
+        ansible_sudo_pass: kk3249
+        metallb_ip_range:
+          - "172.26.50.248-172.26.50.249"
+        metallb_protocol: "layer2"
+    etcd:
+      hosts:
+        node1:
+    k8s-cluster:
+      children:
+        kube-master:
+        kube-node:
+    calico-rr:
+      hosts: {}

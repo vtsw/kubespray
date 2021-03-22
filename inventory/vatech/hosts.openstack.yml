@@ -23,7 +23,7 @@ all:
         node2:
         node3:
       vars:
-        ansible_user: haruband
+        ansible_user: root
         ansible_sudo_pass: kk3249
         ansible_become: yes
         metallb_enabled: false

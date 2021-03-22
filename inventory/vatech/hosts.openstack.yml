@@ -1,0 +1,40 @@
+all:
+  hosts:
+    node1:
+      ip: 172.26.50.139
+      ansible_host: 172.26.50.139
+      access_ip: 172.26.50.139
+    node2:
+      ip: 172.26.50.127
+      ansible_host: 172.26.50.127
+      access_ip: 172.26.50.127
+    node3:
+      ip: 172.26.50.140
+      ansible_host: 172.26.50.140
+      access_ip: 172.26.50.140
+  children:
+    kube-master:
+      hosts:
+        node1:
+        node2:
+    kube-node:
+      hosts:
+        node1:
+        node2:
+        node3:
+      vars:
+        ansible_user: haruband
+        ansible_sudo_pass: kk3249
+        ansible_become: yes
+        metallb_enabled: false
+    etcd:
+      hosts:
+        node1:
+        node2:
+        node3:
+    k8s-cluster:
+      children:
+        kube-master:
+        kube-node:
+    calico-rr:
+      hosts: {}

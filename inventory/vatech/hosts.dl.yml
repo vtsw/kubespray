@@ -9,9 +9,9 @@ all:
       ip: 192.168.6.33
       access_ip: 192.168.6.33
     node3:
-      ansible_host: 192.168.6.193
-      ip: 192.168.6.193
-      access_ip: 192.168.6.193
+      ansible_host: 192.168.6.34
+      ip: 192.168.6.34
+      access_ip: 192.168.6.34
     node4:
       ansible_host: 192.168.6.35
       ip: 192.168.6.35

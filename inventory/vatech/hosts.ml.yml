@@ -1,29 +1,29 @@
 all:
   hosts:
     node1:
-      ansible_host: 172.26.50.106
-      ip: 172.26.50.106
-      access_ip: 172.26.50.106
+      ansible_host: 172.36.100.16
+      ip: 172.36.100.16
+      access_ip: 172.36.100.16
     node2:
-      ansible_host: 172.26.50.107
-      ip: 172.26.50.107
-      access_ip: 172.26.50.107
+      ansible_host: 172.36.100.17
+      ip: 172.36.100.17
+      access_ip: 172.36.100.17
     node3:
-      ansible_host: 172.26.50.108
-      ip: 172.26.50.108
-      access_ip: 172.26.50.108
+      ansible_host: 172.36.100.18
+      ip: 172.36.100.18
+      access_ip: 172.36.100.18
     node4:
-      ansible_host: 172.26.50.109
-      ip: 172.26.50.109
-      access_ip: 172.26.50.109
+      ansible_host: 172.36.100.19
+      ip: 172.36.100.19
+      access_ip: 172.36.100.19
     node5:
-      ansible_host: 172.26.50.110
-      ip: 172.26.50.110
-      access_ip: 172.26.50.110
+      ansible_host: 172.36.100.20
+      ip: 172.36.100.20
+      access_ip: 172.36.100.20
     node6:
-      ansible_host: 172.26.50.111
-      ip: 172.26.50.111
-      access_ip: 172.26.50.111
+      ansible_host: 172.36.100.21
+      ip: 172.36.100.21
+      access_ip: 172.36.100.21
   children:
     kube-master:
       hosts:
@@ -42,7 +42,7 @@ all:
         ansible_become: yes
         ansible_sudo_pass: kk3249
         metallb_ip_range:
-          - "172.26.50.246-172.26.50.247"
+          - "172.36.100.212-172.36.100.213"
         metallb_protocol: "layer2"
     etcd:
       hosts:
